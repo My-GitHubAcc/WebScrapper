@@ -1,0 +1,13 @@
+2021-01-02 11:05:53,548 - WebScrapper.scrapper.Scrapper - INFO - Scrapper instance created with url=http://contrastlens.com/boutique/
+2021-01-02 11:06:01,055 - WebScrapper.scrapper.Scrapper - INFO - Scrapper instance created with url=http://contrastlens.com/boutique/
+2021-01-02 11:06:04,181 - WebScrapper.scrapper.Scrapper - INFO - Scrapper instance created with url=http://contrastlens.com/boutique/
+2021-01-02 11:06:07,484 - WebScrapper.scrapper.Scrapper - INFO - Scrapper instance created with url=http://contrastlens.com/boutique/
+2021-01-02 11:06:10,611 - WebScrapper.scrapper.Scrapper - INFO - Scrapper instance created with url=http://contrastlens.com/boutique/
+2021-01-02 11:07:10,104 - WebScrapper.scrapper.Scrapper - INFO - Scrapper instance created with url=http://contrastlens.com/boutique/
+2021-01-02 11:07:13,608 - WebScrapper.scrapper.Scrapper - DEBUG - Fetched elements with className: fusion-top-frame
+2021-01-02 11:07:55,373 - WebScrapper.scrapper.Scrapper - INFO - Scrapper instance created with url=http://contrastlens.com/boutique/
+2021-01-02 11:07:58,821 - WebScrapper.scrapper.Scrapper - DEBUG - Fetched elements with className: woof_term_4655
+2021-01-02 11:11:17,538 - WebScrapper.scrapper.Scrapper - INFO - Scrapper instance created with url=http://contrastlens.com/boutique/
+2021-01-02 11:11:24,139 - WebScrapper.scrapper.Scrapper - DEBUG - Fetched elements with className: woof_term_4655
+2021-01-02 11:11:30,179 - WebScrapper.scrapper.Scrapper - INFO - Scrapper instance created with url=http://contrastlens.com/boutique/
+2021-01-02 11:11:33,147 - WebScrapper.scrapper.Scrapper - DEBUG - Fetched elements with attributes: {'data-tax': 'pa_lens-material'}
