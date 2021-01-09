@@ -2,6 +2,7 @@ from . import BaseModel
 from sqlalchemy import Column, String, Integer
 from sqlalchemy.sql.schema import ForeignKey
 class Lunettes(BaseModel):
+    __tablename__ = "lunettes"
     id = Column(Integer, primary_key=True)
     name = Column(String)
     categorie_id = Column(Integer, ForeignKey('categorie.id'))
