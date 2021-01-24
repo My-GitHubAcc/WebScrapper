@@ -19,58 +19,58 @@ depends_on = None
 def upgrade():
     op.create_table(
         'categorie',
-        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('name', sa.String(50), nullable=False),
      
     )
     op.create_table(
         'form',
-        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('name', sa.String(50), nullable=False),
     )
     op.create_table(
         'gender',
-        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('name', sa.String(50), nullable=False),
     )
 op.create_table(
         'marque',
-        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('name', sa.String(50), nullable=False),
     )
 op.create_table(
         'material_fond',
-        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('name', sa.String(50), nullable=False),
     )
 op.create_table(
         'material_front',
-        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('name', sa.String(50), nullable=False),
     )
 op.create_table(
         'material_lens',
-        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('name', sa.String(50), nullable=False),
     )
 op.create_table(
         'structure',
-        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('name', sa.String(50), nullable=False),
     )
 op.create_table(
         'taille_lunettes',
-        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('name', sa.String(50), nullable=False),
     )
 op.create_table(
         'taille_temple',
-        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('name', sa.String(50), nullable=False),
     )
 op.create_table(
         'lunettes',
-        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('name', sa.String(50), nullable=False),
         sa.Column('categorie_id', sa.Integer, sa.ForeignKey('categorie.id')),
         sa.Column('form_id', sa.Integer, sa.ForeignKey('form.id')),
