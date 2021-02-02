@@ -74,7 +74,9 @@ def upgrade():
         sa.Column('material_fond_id', sa.Integer, sa.ForeignKey('material_fond.id')),
         sa.Column('material_front_id', sa.Integer, sa.ForeignKey('material_front.id')),
         sa.Column('structure_id', sa.Integer, sa.ForeignKey('structure.id')),
-        sa.Column('taille_temple_id', sa.Integer, sa.ForeignKey('categorie.id')),
+        sa.Column('taille_lunettes_id', sa.Integer, sa.ForeignKey('taille_lunettes.id')),
+        sa.Column('taille_temple_id', sa.Integer, sa.ForeignKey('taille_temple.id')),
+        sa.Column('year', sa.String)
     )
 
 def downgrade():

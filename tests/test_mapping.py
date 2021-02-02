@@ -116,3 +116,9 @@ class TestMapping:
                 for baseElement in pageContents
             ]
         assert len(map.models) > 0
+
+    def test_can_save_lunettes_to_db(self):
+        map = LunetteMap()
+        map.mapModels(self.url + 'boutique')
+
+        assert len(map.models) > 0
