@@ -1,13 +1,9 @@
-import re
 import urllib.parse as urllib_parse
 import concurrent.futures
-from bs4.element import NavigableString
-import sqlalchemy
 from mappers.Mapper import Mapper
 from models import db
 from models.Lunettes import Lunettes
 from models.Categorie import Categorie
-# from models.Couleur import Couleur
 from models.Form import Form
 from models.Gender import Gender
 from models.Marque import Marque
@@ -17,6 +13,7 @@ from models.Structure import Structure
 from models.Taille_Lunettes import Taille_Lunettes
 from models.Taille_Temple import Taille_Temple
 
+from sqlalchemy.orm import scoped_session
 class LunetteMap(Mapper):
     _class_name = 'woocommerce-product-attributes-item__value'
     # _class_name = 'woocommerce-product-attributes shop_attributes'
@@ -27,7 +24,7 @@ class LunetteMap(Mapper):
         self.logger.info("Finished fetching model links")
         self.logger.info("Started Scrapping all lunettes models")
         with concurrent.futures.ThreadPoolExecutor() as executor:
-            pageContents = executor.self(self.getBaseElement, pages)
+            pageContents = executor.map(self.getBaseElement, pages)
             self.models = [
                 self.buildModel(baseElement)
                 for baseElement in pageContents
@@ -94,14 +91,14 @@ class LunetteMap(Mapper):
         session = db()
         def queryBuilder(columnName, name):
             if name is None:
-                self.logger.warning('Found a None value for {columnName}')
+                self.logger.warning(f'Found a None value for {columnName}')
             return session.query(columnName).filter_by(name = name)\
                 .one().id \
                 if name is not None \
                 else None
         try:
-            return Lunettes(
-                id=None, name=None, 
+            m = Lunettes(
+                id=None, 
                 categorie_id = queryBuilder(Categorie.id, categorie_content),
                 form_id = queryBuilder(Form.id, form_content),
                 gender_id = queryBuilder(Gender.id, gender_content),
@@ -113,6 +110,11 @@ class LunetteMap(Mapper):
                 taille_temple_id = queryBuilder(Taille_Temple.id, tailleTemple_content),
                 year = year
             )
+            session = scoped_session(db)
+            session.add(m)
+            session.commit()
+            session.remove()
+            return m
         except Exception as err:
             self.logger.error(f"buildModel => {err.args}")
             return None
