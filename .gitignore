@@ -3,3 +3,4 @@ Pipfile.lock
 *.pyc
 *.log
 *.sqlite*
+.Rproj.user
