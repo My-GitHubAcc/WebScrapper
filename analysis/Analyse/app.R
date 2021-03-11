@@ -4,8 +4,11 @@ library(plotly)
 
 
 ui <- dashboardPage(
-    dashboardHeader(title = 'Dashboard'),
+    dashboardHeader(
+        titleWidth = 300,
+        title = 'Dashboard'),
     dashboardSidebar(
+        width = 300,
         sidebarMenu(
             menuItem("Distribution par Gender", 
                      tabName = "lunettes_gender"),
