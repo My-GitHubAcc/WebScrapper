@@ -41,13 +41,4 @@ session.add_all(models)
 session.commit()
 
 map = LunetteMap()
-map.loadPage(url + 'boutique')
-pages = map.getGlassesLinks()
-with concurrent.futures.ThreadPoolExecutor() as executor:
-    pageContents = executor.map(map.getBaseElement, pages[:150])
-    # Nones = len(el for el in pageContents if el[3] is None)
-    
-    map.models = [
-        map.buildModel(baseElement)
-        for baseElement in pageContents
-    ]
+map.mapModels(url + 'boutique')

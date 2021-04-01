@@ -2,7 +2,6 @@ library(shiny)
 library(shinydashboard)
 library(plotly)
 
-
 ui <- dashboardPage(
     dashboardHeader(
         titleWidth = 300,
@@ -20,7 +19,7 @@ ui <- dashboardPage(
                      tabName = "taille_gender"),
             menuItem("Proportions Material par Marque", 
                      tabName = "material_marque"),
-            menuItem("Categorie par ans", 
+            menuItem("Categorie par marque", 
                      tabName = "categorie_marque")
         )
     ),

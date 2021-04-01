@@ -31,13 +31,13 @@ lunettes_gender <- ggplot(data_gender) +
   theme(plot.title = element_text(hjust = 0.5, size = 18),
         legend.position ="none")
 
-# Année d'expedition des lunettes
+# Année de sortie des lunettes
 annee_lunettes<- ggplot(df) +
   aes(x = year) +
   geom_histogram(bins = 30, fill = "#008ceb") +
   ggthemes::theme_hc() +
   #scale_x_discrete(limits = unique(df$year)) +
-  labs(y = "Année", title = "Année d'expedition des lunettes") +
+  labs(x = "Année", y= element_blank(), title = "Année de sortie des lunettes") +
   theme(plot.title = element_text(hjust = 0.5, size = 18))
 
 # Type de Lunettes par Marque
